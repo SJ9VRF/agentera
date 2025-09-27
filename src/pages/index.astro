@@ -12,24 +12,24 @@ const links = {
 <Base title="Agentera — Agentic AI" description="Agentera: AI Virtual Company, AI for Law Firms, and CertiFy Information Verifier.">
 
   <!-- HERO -->
-  <section class="mt-2 rounded-2xl border border-white/10 p-10 md:p-14 bg-white/5">
+  <section class="hero mt-2">
     <div class="max-w-3xl">
-      <h1 class="h1 leading-tight">Agentera</h1>
-      <p class="mt-3 text-lg text-gray-200/90">
-        Building the foundation of <b>agentic AI</b> for enterprises.  
-        Our suite: <b>AI Virtual Company</b>, <b>AI for Law Firms</b>, and <b>CertiFy</b> (information verification).
+      <h1 class="h1 leading-tight">Agentic AI that <span class="grad-text">plans, verifies, ships</span>.</h1>
+      <p class="mt-3 lead">
+        Three focused products: <b>AI Virtual Company</b>, <b>AI for Law Firms</b>, and <b>CertiFy</b>—an API-first
+        information verifier with citations and confidence scores.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a href={links.vc} class="btn bg-white/10 hover:bg-white/15 no-underline">Explore Products</a>
-        <a href={links.docs} class="btn no-underline">Documentation</a>
-        <a href={links.github} class="btn no-underline" target="_blank">GitHub</a>
+        <a href={links.vc} class="btn">Explore Products</a>
+        <a href={links.docs} class="btn">Documentation</a>
+        <a href={links.github} class="btn" target="_blank">GitHub</a>
       </div>
     </div>
   </section>
 
   <!-- THREE PRODUCTS -->
   <section class="grid md:grid-cols-3 gap-6 mt-10">
-    <a href={links.vc} class="card no-underline hover:border-white/30 transition block">
+    <a href={links.vc} class="card no-underline block">
       <div class="flex items-start gap-3">
         <!-- Organization icon -->
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -38,12 +38,12 @@ const links = {
         </svg>
         <div>
           <h2 class="h2 mb-1">AI Virtual Company</h2>
-          <p class="text-gray-300 text-sm">Simulate roles, workflows, and KPIs with autonomous agents.</p>
+          <p class="text-text-soft text-sm">Simulate roles, workflows, and KPIs with autonomous agents.</p>
         </div>
       </div>
     </a>
 
-    <a href={links.law} class="card no-underline hover:border-white/30 transition block">
+    <a href={links.law} class="card no-underline block">
       <div class="flex items-start gap-3">
         <!-- Law scales icon -->
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -51,12 +51,12 @@ const links = {
         </svg>
         <div>
           <h2 class="h2 mb-1">AI for Law Firms</h2>
-          <p class="text-gray-300 text-sm">Discovery, precedent retrieval, and drafting with audit-ready reasoning.</p>
+          <p class="text-text-soft text-sm">Discovery, precedent retrieval, and drafting with audit-ready reasoning.</p>
         </div>
       </div>
     </a>
 
-    <a href={links.verify} class="card no-underline hover:border-white/30 transition block">
+    <a href={links.verify} class="card no-underline block">
       <div class="flex items-start gap-3">
         <!-- Shield check icon -->
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -65,7 +65,7 @@ const links = {
         </svg>
         <div>
           <h2 class="h2 mb-1">CertiFy — Verifier</h2>
-          <p class="text-gray-300 text-sm">API-first fact verification with confidence scoring and citations.</p>
+          <p class="text-text-soft text-sm">API-first fact verification with confidence scoring and citations.</p>
         </div>
       </div>
     </a>
@@ -74,43 +74,31 @@ const links = {
   <!-- WHY / HOW -->
   <section class="grid md:grid-cols-2 gap-6 mt-10">
     <div class="card">
-      <div class="flex items-center gap-2 mb-2">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/>
-        </svg>
-        <h3 class="h2">Why Now</h3>
-      </div>
-      <ul class="text-sm text-gray-300 space-y-2">
+      <h3 class="h2 mb-2">Why Now</h3>
+      <ul class="text-sm text-text-soft space-y-2">
         <li>Enterprises are moving from demos to outcomes.</li>
-        <li>Need for coordination, verification, and governance in AI systems.</li>
-        <li>Agentera provides SOC2-ready patterns and human-in-the-loop controls.</li>
+        <li>Coordination, verification, and governance are required.</li>
+        <li>SOC2-ready patterns, audit logs, and approver gates.</li>
       </ul>
     </div>
-
     <div class="card">
-      <div class="flex items-center gap-2 mb-2">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M4 6h8a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h12"/>
-          <circle cx="4" cy="6" r="2"/><circle cx="8" cy="14" r="2"/><circle cx="20" cy="22" r="2"/>
-        </svg>
-        <h3 class="h2">How It Works</h3>
-      </div>
-      <ol class="text-sm text-gray-300 space-y-2 list-decimal list-inside">
-        <li>Connect data sources: Docs, GitHub, DMS, or web.</li>
-        <li>Orchestrate role-based agents with memory and tools.</li>
+      <h3 class="h2 mb-2">How It Works</h3>
+      <ol class="text-sm text-text-soft space-y-2 list-decimal list-inside">
+        <li>Connect data sources (Docs/GitHub/DMS/Web).</li>
+        <li>Orchestrate role-based agents with memory & tools.</li>
         <li>Verify outputs via CertiFy before shipping.</li>
-        <li>Ship with dashboards, reports, and approvals.</li>
+        <li>Ship with dashboards, exports, and approvals.</li>
       </ol>
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
-  <section class="mt-10 rounded-2xl border border-white/10 p-8 bg-white/5 text-center">
+  <!-- CTA -->
+  <section class="mt-10 rounded-3xl border border-white/10 p-8 bg-white/[0.04] text-center shadow-soft">
     <h3 class="h2">Seeking 2–3 Pilot Partners</h3>
-    <p class="mt-2 text-gray-200/90">Legal Ops, enterprise R&D teams, or platforms needing verification.</p>
+    <p class="mt-2 text-text-soft">Legal Ops, enterprise R&D, and platforms needing verification.</p>
     <div class="mt-4 flex justify-center gap-3">
-      <a class="btn no-underline" href={links.docs}>Documentation</a>
-      <a class="btn no-underline" href={links.github} target="_blank">GitHub</a>
+      <a class="btn" href={links.docs}>Documentation</a>
+      <a class="btn" href={links.github} target="_blank">GitHub</a>
     </div>
   </section>
 
