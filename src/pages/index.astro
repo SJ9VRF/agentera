@@ -1,168 +1,121 @@
 ---
 import Base from "../layouts/Base.astro";
-const heroCTA = [
-  { href: "/products/ai_virtual_company", label: "See Product →" },
-  { href: "https://github.com/sj9vrf/agentera", label: "Star on GitHub" },
-];
+const links = {
+  github: "https://github.com/sj9vrf/agentera",
+  vc: "/products/ai_virtual_company",
+  law: "/products/ai_for_law_firms",
+  verify: "/products/ai_information_verifier",
+  docs: "/docs",
+};
 ---
 
-<Base title="Agentera — Agentic AI Suite" description="Agentera builds agentic AI: Virtual Company Simulation, AI for Law Firms, and CertiFy (information verification).">
+<Base title="Agentera — Agentic AI, Clean & Focused" description="Agentera: AI Virtual Company, AI for Law Firms, and CertiFy information verifier.">
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-8 md:p-12 mt-4">
-    <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-25 bg-emerald-400/30"></div>
-    <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full blur-3xl opacity-20 bg-cyan-400/30"></div>
-
+  <!-- HERO (clean, readable) -->
+  <section class="mt-2 rounded-2xl border border-white/10 p-8 md:p-12 bg-white/5">
     <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-gray-200">
-        <span class="opacity-80">Pre-seed</span>
-        <span class="opacity-30">•</span>
-        <span class="opacity-80">Pilot partners wanted</span>
+        <span>Agentic AI Suite</span><span class="opacity-40">•</span><span>Pilot partners</span>
       </div>
-
-      <h1 class="h1 mt-4 leading-tight">
-        Agentic AI that <span class="text-emerald-300">plans, verifies,</span> and <span class="text-emerald-300">ships</span>.
-      </h1>
-      <p class="mt-4 text-lg text-gray-200/90">
-        Agentera is a suite of production-ready agents: a <b>Virtual Company simulator</b> for org-level planning,
-        <b>AI for Law Firms</b> to accelerate drafting with auditability, and <b>CertiFy</b> — an API-first
-        information verifier with citations and confidence scores.
+      <h1 class="h1 mt-4 leading-tight">Plan. Verify. Ship.</h1>
+      <p class="mt-3 text-lg text-gray-200/90">
+        Three focused products: <b>AI Virtual Company</b>, <b>AI for Law Firms</b>, و <b>CertiFy</b> (Information Verifier).
+        طراحی مینیمال، قابل اتکا، مناسب دمو برای سرمایه‌گذار.
       </p>
-
       <div class="mt-6 flex flex-wrap gap-3">
-        {heroCTA.map((c) => (
-          <a href={c.href} class="btn bg-white/10 hover:bg-white/15 no-underline">{c.label}</a>
-        ))}
-        <a href="/docs" class="btn no-underline">Read the Docs</a>
-      </div>
-
-      <!-- Social proof (placeholder logos) -->
-      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-gray-300/70 text-xs">
-        <div class="card py-4 text-center">Pilot: Research Lab</div>
-        <div class="card py-4 text-center">Pilot: Boutique Firm</div>
-        <div class="card py-4 text-center">Cloud-Ready</div>
-        <div class="card py-4 text-center">API-First</div>
+        <a href={links.vc} class="btn bg-white/10 hover:bg-white/15 no-underline">See Product</a>
+        <a href={links.docs} class="btn no-underline">Docs</a>
+        <a href={links.github} class="btn no-underline" target="_blank">GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- VALUE SNAPSHOTS -->
-  <section class="grid md:grid-cols-3 gap-6 mt-10">
+  <!-- 3 PILLARS (icons + one-liners) -->
+  <section class="grid md:grid-cols-3 gap-6 mt-8">
+    <a href={links.vc} class="card no-underline block hover:border-white/30 transition">
+      <div class="flex items-start gap-3">
+        <!-- organization icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" class="shrink-0" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 21h18M6 21V7h12v14M9 7V3h6v4" />
+          <path d="M9 12h6M9 16h6" />
+        </svg>
+        <div>
+          <h2 class="h2 mb-1">AI Virtual Company</h2>
+          <p class="text-gray-300 text-sm">شبیه‌سازی نقش‌ها و KPIها؛ برنامه‌ریزی سناریو و گزارش‌دهی تمیز.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href={links.law} class="card no-underline block hover:border-white/30 transition">
+      <div class="flex items-start gap-3">
+        <!-- scales icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" class="shrink-0" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M12 3v3M5 21h14M12 6l-6 6h12l-6-6zM6 12c0 3-2 5-2 5h4s-2-2-2-5zm12 0c0 3-2 5-2 5h4s-2-2-2-5z"/>
+        </svg>
+        <div>
+          <h2 class="h2 mb-1">AI for Law Firms</h2>
+          <p class="text-gray-300 text-sm">تریاژ ای‌دیسکاوری، جستجوی پرِسِدِنت، درفت با ارجاع و ردپای ممیزی.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href={links.verify} class="card no-underline block hover:border-white/30 transition">
+      <div class="flex items-start gap-3">
+        <!-- shield-check icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" class="shrink-0" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M12 3l7 4v5c0 4.97-3.58 8.94-7 9-3.42-.06-7-4.03-7-9V7l7-4z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <div>
+          <h2 class="h2 mb-1">CertiFy — Verifier</h2>
+          <p class="text-gray-300 text-sm">امتیاز صحت، منابع لینک‌دار، و سیاست‌های قابل اعمال پیش از انتشار.</p>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- WHY / HOW (tidy, two columns) -->
+  <section class="grid md:grid-cols-2 gap-6 mt-8">
     <div class="card">
-      <h2 class="h2 mb-2">AI Virtual Company</h2>
-      <p class="text-gray-200/90">Simulate CEO→PM→Eng→Legal with goal-aligned agents. Plan scenarios, stress-test org changes, and track KPIs.</p>
-      <ul class="mt-3 space-y-1 text-sm text-gray-300">
-        <li>• Org graph + shared memory</li>
-        <li>• Multi-agent planning (Analyst/Skeptic/Judge)</li>
-        <li>• Dashboards & exports</li>
+      <div class="flex items-center gap-2 mb-2">
+        <!-- spark icon -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/>
+        </svg>
+        <h3 class="h2">Why now</h3>
+      </div>
+      <ul class="text-sm text-gray-300 space-y-2">
+        <li>از دموی عامل‌ها به نتایج واقعی: نیاز به هماهنگی، راستی‌آزمایی، و حکمرانی.</li>
+        <li>پترن‌های SOC2-ready، لاگ کامل، و checkpoint برای Human-in-the-loop.</li>
       </ul>
-      <a href="/products/ai_virtual_company" class="btn mt-4 no-underline">Explore →</a>
     </div>
 
     <div class="card">
-      <h2 class="h2 mb-2">AI for Law Firms</h2>
-      <p class="text-gray-200/90">Discovery triage, precedent retrieval, and draft generation with verifiable reasoning.</p>
-      <ul class="mt-3 space-y-1 text-sm text-gray-300">
-        <li>• Jurisdiction filters & Bluebook cites</li>
-        <li>• E-discovery clustering</li>
-        <li>• Audit trails by default</li>
-      </ul>
-      <a href="/products/ai_for_law_firms" class="btn mt-4 no-underline">Explore →</a>
-    </div>
-
-    <div class="card">
-      <h2 class="h2 mb-2">CertiFy — Verifier API</h2>
-      <p class="text-gray-200/90">Agent pipeline that scores claims, cites sources, and flags contradictions.</p>
-      <ul class="mt-3 space-y-1 text-sm text-gray-300">
-        <li>• Evidence graph & confidence score</li>
-        <li>• REST + Webhooks, SDKs</li>
-        <li>• Policy hooks (domain allow/deny)</li>
-      </ul>
-      <a href="/products/ai_information_verifier" class="btn mt-4 no-underline">Explore →</a>
+      <div class="flex items-center gap-2 mb-2">
+        <!-- route icon -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M4 6h8a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h12"/>
+          <circle cx="4" cy="6" r="2"/><circle cx="8" cy="14" r="2"/><circle cx="20" cy="22" r="2"/>
+        </svg>
+        <h3 class="h2">How it works</h3>
+      </div>
+      <ol class="text-sm text-gray-300 space-y-2 list-decimal list-inside">
+        <li>Connect: Docs/GitHub/DMS یا منابع وب</li>
+        <li>Orchestrate: عامل‌های نقش‌محور با حافظه و ابزار</li>
+        <li>Verify: CertiFy قبل از خروجی نهایی</li>
+        <li>Ship: داشبورد، خروجی‌ها و approvals</li>
+      </ol>
     </div>
   </section>
 
-  <!-- WHY NOW / MOAT -->
-  <section class="mt-12 grid md:grid-cols-2 gap-6">
-    <div class="card">
-      <h3 class="h2 mb-2">Why now</h3>
-      <p class="text-gray-200/90">
-        Enterprises are moving from demos to outcomes. Agentic systems need <b>coordination</b>, <b>verification</b>,
-        and <b>governance</b> to leave the lab. Agentera is built for that transition.
-      </p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>• Agent orchestration aligned to business KPIs</li>
-        <li>• Veracity checks before outputs hit production</li>
-        <li>• SOC-2-ready patterns and audit logs</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3 class="h2 mb-2">Moat</h3>
-      <p class="text-gray-200/90">
-        Proprietary multi-agent verification (Analyst/Skeptic/Judge), provenance graphing, policy-aware retrieval,
-        and evaluation harnesses tuned on real workloads.
-      </p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>• Cross-claim contradiction detection</li>
-        <li>• Memory & tool-use traces for governance</li>
-        <li>• Pluggable models (bring-your-own foundation model)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="mt-12 card">
-    <h3 class="h2 mb-4">How it works</h3>
-    <div class="grid md:grid-cols-4 gap-6 text-sm">
-      <div>
-        <div class="text-3xl mb-2">1</div>
-        <b>Connect</b>
-        <p class="text-gray-300">Docs, GitHub, DMS, or web sources.</p>
-      </div>
-      <div>
-        <div class="text-3xl mb-2">2</div>
-        <b>Orchestrate</b>
-        <p class="text-gray-300">Role-based agents plan & execute with checks.</p>
-      </div>
-      <div>
-        <div class="text-3xl mb-2">3</div>
-        <b>Verify</b>
-        <p class="text-gray-300">CertiFy scores claims and attaches evidence.</p>
-      </div>
-      <div>
-        <div class="text-3xl mb-2">4</div>
-        <b>Ship</b>
-        <p class="text-gray-300">Dashboards, exports, and approvals to production.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRACTION / METRICS (placeholders you can update) -->
-  <section class="mt-12 grid md:grid-cols-3 gap-6">
-    <div class="card text-center">
-      <div class="text-5xl font-extrabold">3</div>
-      <div class="mt-1 text-gray-300">Products shipping</div>
-    </div>
-    <div class="card text-center">
-      <div class="text-5xl font-extrabold">2</div>
-      <div class="mt-1 text-gray-300">Active pilots</div>
-    </div>
-    <div class="card text-center">
-      <div class="text-5xl font-extrabold">API</div>
-      <div class="mt-1 text-gray-300">Verifier & Webhooks</div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="mt-12 rounded-2xl border border-white/10 p-8 text-center bg-white/5">
-    <h3 class="h2">Looking for 2–3 pilot partners</h3>
-    <p class="mt-2 text-gray-200/90">Legal ops, enterprise R&D, or platforms needing verification.</p>
+  <!-- CTA (quiet & clear) -->
+  <section class="mt-8 rounded-2xl border border-white/10 p-8 bg-white/5 text-center">
+    <h3 class="h2">در جستجوی 2–3 شریک Pilot</h3>
+    <p class="mt-2 text-gray-200/90">Legal Ops، تیم‌های R&D یا پلتفرم‌هایی که به Verification نیاز دارند.</p>
     <div class="mt-4 flex justify-center gap-3">
-      <a class="btn bg-white/10 hover:bg-white/15 no-underline" href="/docs">Read the Docs</a>
-      <a class="btn no-underline" href="mailto:founders@agentera.ai">Contact founders</a>
+      <a class="btn no-underline" href={links.docs}>Docs</a>
+      <a class="btn no-underline" href={links.github} target="_blank">GitHub</a>
     </div>
-    <p class="small mt-3">Prefer GitHub? <a href="https://github.com/sj9vrf/agentera" target="_blank">Open an issue</a>.</p>
   </section>
 
 </Base>
