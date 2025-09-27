@@ -1,84 +1,21 @@
----
-import Base from "../../layouts/Base.astro";
-const cta = [
-  { href: "/docs", label: "API Docs →" },
-  { href: "https://github.com/sj9vrf/agentera", label: "SDK & Examples" },
-];
----
-
-<Base title="CertiFy — Information Verifier — Agentera" description="Multi-agent fact verification with source attribution, confidence scoring, and policy-aware retrieval.">
-  <article class="prose prose-invert max-w-none">
-    <h1>CertiFy — Information Verifier</h1>
-    <p class="lead">
-      An API-first verification layer: submit a claim, get back a <b>veracity score</b>, linked <b>evidence</b>,
-      and a concise <b>rationale</b>. Built for product surfaces that cannot afford to show unverified outputs.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-6 my-8">
-      <div class="card"><b>Analyst</b><br/><span class="text-sm text-gray-300">Retrieves & clusters candidate evidence.</span></div>
-      <div class="card"><b>Skeptic</b><br/><span class="text-sm text-gray-300">Attacks claims; hunts contradictions & weak sources.</span></div>
-      <div class="card"><b>Judge</b><br/><span class="text-sm text-gray-300">Scores veracity; explains decision with links.</span></div>
-    </div>
-
     <h2>API (high-level)</h2>
     <div class="card">
       <pre><code>POST /verify
-{
+&#123;
   "claim": "The deadline is October 15, 2025.",
   "context": ["https://example.com/policy", "internal:doc/123"],
-  "policy": { "blocked_domains": ["spam.com"], "min_authority": "high" }
-}
+  "policy": &#123; "blocked_domains": ["spam.com"], "min_authority": "high" &#125;
+&#125;
 
 200 OK
-{
+&#123;
   "score": 0.82,
   "verdict": "Likely true",
   "evidence": [
-    {"url": "https://example.com/policy#dates", "support": "direct"},
-    {"url": "internal:doc/123", "support": "confirming"}
+    &#123;"url": "https://example.com/policy#dates", "support": "direct"&#125;,
+    &#123;"url": "internal:doc/123", "support": "confirming"&#125;
   ],
   "rationale": "Matches official policy; cross-confirmed by internal memo.",
   "flags": []
-}</code></pre>
+&#125;</code></pre>
     </div>
-
-    <h2>What it checks</h2>
-    <ul>
-      <li><b>Provenance:</b> authoritative sources vs. low-trust domains.</li>
-      <li><b>Contradictions:</b> cross-claim and cross-source conflict search.</li>
-      <li><b>Completeness:</b> detects when evidence is insufficient and requests follow-ups.</li>
-      <li><b>Policy compliance:</b> allow/deny lists, jurisdiction, recency windows.</li>
-    </ul>
-
-    <h2>Integrations</h2>
-    <ul>
-      <li>Web search adapters, enterprise search (RAG), and private corpora.</li>
-      <li>SDKs: Python & JS; webhooks for async large verifications.</li>
-      <li>UI bundle (optional): evidence graph and score explanation.</li>
-    </ul>
-
-    <h2>Security & Compliance</h2>
-    <ul>
-      <li>Signed responses (hash chain) for downstream audit.</li>
-      <li>Retrieval redaction for sensitive fields (PII-aware patterns).</li>
-      <li>Retention controls; per-tenant encryption and access logs.</li>
-    </ul>
-
-    <h2>Where it fits</h2>
-    <ul>
-      <li><b>Product surfaces:</b> summaries, answers, and notifications that must be trustworthy.</li>
-      <li><b>Workflows:</b> pre-publish checks in CMS, PR review bots, knowledge base updates.</li>
-      <li><b>Compliance:</b> attach evidence packets to decisions for auditors.</li>
-    </ul>
-
-    <h2>FAQ</h2>
-    <p><b>Is the score calibrated?</b> Scores are calibrated against held-out evaluation sets and can be mapped to thresholds (approve/hold/reject).</p>
-    <p><b>Does it replace human review?</b> No—it prioritizes review and blocks low-confidence claims; humans decide thresholds.</p>
-    <p><b>Can I force source policies?</b> Yes—policy config enforces domain allow/deny, minimum authority, and time windows.</p>
-
-    <div class="mt-8 flex flex-wrap gap-3">
-      {cta.map((c) => <a href={c.href} class="btn no-underline">{c.label}</a>)}
-      <a class="btn no-underline" href="mailto:founders@agentera.ai">Request API Access</a>
-    </div>
-  </article>
-</Base>
