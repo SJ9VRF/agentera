@@ -1,44 +1,69 @@
 ---
 import Base from "../../layouts/Base.astro";
+const cta = [
+  { href: "/docs", label: "Implementation Guide →" },
+  { href: "mailto:founders@agentera.ai", label: "Request a Demo" },
+];
 ---
-<Base title="AI for Law Firms — Agentera" description="Agentic discovery, drafting, and precedent search with verifiable reasoning.">
+
+<Base title="AI for Law Firms — Agentera" description="Discovery triage, precedent retrieval, and drafting with verifiable reasoning and auditability.">
   <article class="prose prose-invert max-w-none">
     <h1>AI for Law Firms</h1>
-    <p class="lead">From intake to drafting: accelerate workflows while preserving confidentiality and auditability.</p>
+    <p class="lead">
+      Accelerate discovery, precedent search, and drafting—without sacrificing confidentiality or auditability.
+      Agentic workflows produce drafts with citations, pinpoints, and reasoning you can review.
+    </p>
 
-    <h2>What it does</h2>
+    <div class="grid md:grid-cols-3 gap-6 my-8">
+      <div class="card"><b>E-Discovery Triage</b><br/><span class="text-sm text-gray-300">Cluster & prioritize materials with rationale.</span></div>
+      <div class="card"><b>Precedent Retrieval</b><br/><span class="text-sm text-gray-300">Jurisdiction filters, shepardizing signals, templates.</span></div>
+      <div class="card"><b>Drafting</b><br/><span class="text-sm text-gray-300">Memos/briefs/motions with cites and verifiable reasoning.</span></div>
+    </div>
+
+    <h2>Workflow</h2>
+    <ol>
+      <li><b>Connect DMS & sources:</b> document management system, public dockets, research databases.</li>
+      <li><b>Configure matter guardrails:</b> jurisdictions, time windows, authority tiers, exclusions.</li>
+      <li><b>Run agents:</b> intake summary → issue spotting → precedent pack → draft with cite pinpoints.</li>
+      <li><b>Verify:</b> send key claims through <a href="/products/ai_information_verifier">CertiFy</a> before delivery.</li>
+      <li><b>Export:</b> DOCX with outline, citations, and appendix of sources.</li>
+    </ol>
+
+    <h2>Why it’s different</h2>
     <ul>
-      <li>E-discovery triage and clustering</li>
-      <li>Precedent retrieval with jurisdiction filters</li>
-      <li>Draft generation with citation pinpoints</li>
-      <li>Traceable reasoning summaries (no hidden magic)</li>
+      <li><b>Reasoning surfaced:</b> review the chain—no “black box” surprises.</li>
+      <li><b>Policy awareness:</b> block disallowed sources; enforce citation quality.</li>
+      <li><b>Audit-ready:</b> every step logged with inputs/outputs and reviewers.</li>
     </ul>
 
-    <h2>Who it's for</h2>
-    <p>Boutique and enterprise law firms, in-house counsel, and legal ops teams.</p>
-
-    <h2>How it works</h2>
-    <ol>
-      <li>Connect DMS and PACER/legal databases</li>
-      <li>Configure jurisdictions and templates</li>
-      <li>Run agents for memo, brief, or motion drafts</li>
-      <li>Export to DOCX with Bluebook citations</li>
-    </ol>
+    <h2>Integrations</h2>
+    <ul>
+      <li>DMS (read-only), docket APIs, research providers (configurable adapters).</li>
+      <li>Export: DOCX, Markdown bundle with sources, PDF packet.</li>
+    </ul>
 
     <h2>Security & Compliance</h2>
     <ul>
-      <li>Client-matter isolation; on-prem or VPC options</li>
-      <li>Regulatory cues: ABA guidance alignment</li>
-      <li>Retention controls and redaction</li>
+      <li>Client–matter isolation; optional on-prem/VPC routing for model calls.</li>
+      <li>PII minimization & redaction pre-prompt; configurable retention windows.</li>
+      <li>Supervised approval queues and access logs for auditors.</li>
     </ul>
 
-    <h2>Roadmap</h2>
+    <h2>Outcomes</h2>
     <ul>
-      <li>Deposition summarizer with speaker diarization</li>
-      <li>Fine-tuned retrieval on firm precedent</li>
-      <li>Billing narrative generator</li>
+      <li><b>Faster first drafts:</b> hours instead of days for structured sections.</li>
+      <li><b>Better recall:</b> broader precedent canvassing with explicit filters.</li>
+      <li><b>Reduced risk:</b> verified claims and traceable reasoning.</li>
     </ul>
 
-    <p class="mt-8"><a class="btn" href="/docs">Read the Docs →</a></p>
+    <h2>FAQ</h2>
+    <p><b>Will it replace lawyers?</b> No—this augments workflows. Human review and signature are required by design.</p>
+    <p><b>How are citations handled?</b> Each assertion links to sources with pinpoints; low-confidence claims are flagged.</p>
+    <p><b>Can we use our private precedent?</b> Yes—fine-tune retrieval on firm corpus; model weights remain separate.</p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      {cta.map((c) => <a href={c.href} class="btn no-underline">{c.label}</a>)}
+      <a class="btn no-underline" href="https://github.com/sj9vrf/agentera" target="_blank">View on GitHub</a>
+    </div>
   </article>
 </Base>
