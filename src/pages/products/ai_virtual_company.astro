@@ -1,44 +1,80 @@
 ---
 import Base from "../../layouts/Base.astro";
+const cta = [
+  { href: "/docs", label: "Read the Docs →" },
+  { href: "https://github.com/sj9vrf/agentera", label: "View on GitHub" },
+];
 ---
-<Base title="AI Virtual Company — Agentera" description="Simulate an entire organization as collaborating agents.">
+
+<Base title="AI Virtual Company — Agentera" description="Simulate a full organization with coordinating agents: CEO, PM, Eng, Legal, Ops. Plan scenarios, verify outputs, and ship with governance.">
   <article class="prose prose-invert max-w-none">
     <h1>AI Virtual Company</h1>
-    <p class="lead">A sandbox to model teams, roles, and workflows as autonomous agents that plan, execute, and report.</p>
+    <p class="lead">
+      A living simulation of your organization. Model roles, goals, and workflows as autonomous agents that plan,
+      execute, cross-review, and report against KPIs—with verification built in.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 my-8">
+      <div class="card"><b>Org Graph</b><br/><span class="text-sm text-gray-300">CEO→PM→Eng→Legal→Ops with dependencies, SLAs, and ownership.</span></div>
+      <div class="card"><b>Multi-Agent Orchestration</b><br/><span class="text-sm text-gray-300">Planner/Analyst/Skeptic/Judge loops; memory & tools.</span></div>
+      <div class="card"><b>Governance</b><br/><span class="text-sm text-gray-300">Checkpoints, audit logs, and policy hooks before shipping.</span></div>
+    </div>
 
     <h2>What it does</h2>
     <ul>
-      <li>Org graph: roles (CEO, PM, Eng, QA, Legal) with goals and dependencies</li>
-      <li>Multi-agent planning (Analyst/Skeptic/Judge) with shared memory</li>
-      <li>Live dashboards: tasks, KPIs, incidents</li>
-      <li>APIs: plug your data sources (Docs, GitHub, Slack)</li>
+      <li>Define an <b>org graph</b> of roles and objectives; connect real data and tools.</li>
+      <li>Run <b>scenario planning</b> (headcount changes, budget shifts, priority swaps) and see impact on KPIs.</li>
+      <li>Agents execute tasks, <b>cross-review</b> outputs, and escalate decisions with <b>explanations</b>.</li>
+      <li>Auto-generate <b>weekly reports</b>, risk registers, runbooks, and experiment plans.</li>
     </ul>
 
-    <h2>Who it's for</h2>
-    <p>Research labs, startups, and enterprise R&D teams needing simulation and decision support.</p>
+    <h2>Primary use cases</h2>
+    <ul>
+      <li><b>Strategy sandbox:</b> simulate roadmaps and hiring plans; quantify trade-offs.</li>
+      <li><b>Program management:</b> coordinate multi-team milestones; surface blockers early.</li>
+      <li><b>R&D acceleration:</b> plan experiments, evaluate evidence, and propose next steps.</li>
+    </ul>
 
-    <h2>How it works</h2>
-    <ol>
-      <li>Define org roles and goals</li>
-      <li>Connect data and tools</li>
-      <li>Run agentic workflows; review plans and outputs</li>
-      <li>Export reports and approvals</li>
-    </ol>
+    <h2>Architecture (high-level)</h2>
+    <div class="card">
+      <ol>
+        <li><b>Ingest & Tools:</b> connectors (Docs, GitHub, Slack, Notion, HTTP, DB), cost-aware calling.</li>
+        <li><b>Org Graph & Memory:</b> role definitions, policies, shared memory (vector + structured notes).</li>
+        <li><b>Orchestrator:</b> Planner → (Analyst ⟷ Skeptic) → Judge → Approver checkpoints.</li>
+        <li><b>Verifier:</b> calls <a href="/products/ai_information_verifier">CertiFy</a> before outputs ship.</li>
+        <li><b>Dashboards:</b> tasks, incidents, KPI heatmaps, decision logs, exports.</li>
+      </ol>
+    </div>
+
+    <h2>Integrations</h2>
+    <ul>
+      <li><b>Dev:</b> GitHub/GitLab issues & PRs, CI webhooks, package registries.</li>
+      <li><b>Docs & Chat:</b> Google Drive, Notion, Confluence, Slack export.</li>
+      <li><b>Data:</b> REST/GraphQL, Postgres/BigQuery (read-only suggested for pilots).</li>
+    </ul>
 
     <h2>Security & Compliance</h2>
     <ul>
-      <li>SOC 2-ready architecture (separation of data and keys)</li>
-      <li>Audit logs and redaction policies</li>
-      <li>PII handling with masked retrieval</li>
+      <li>Tenant isolation; secrets managed per-integration; least-privilege tokens.</li>
+      <li>PII-aware retrieval; redaction before model calls; export controls.</li>
+      <li>Audit logs for every action, prompt/tool call, and decision.</li>
     </ul>
 
-    <h2>Roadmap</h2>
+    <h2>ROI snapshot</h2>
     <ul>
-      <li>Scenario generator (what-if org changes)</li>
-      <li>Budget simulator with financial agents</li>
-      <li>Human-in-the-loop review queues</li>
+      <li><b>≤1 day</b> to stand up a planning sandbox using existing docs & issues.</li>
+      <li><b>30–60%</b> reduction in status churn; consolidated reporting for leadership.</li>
+      <li><b>Fewer wrong turns</b> via pre-shipping verification and cross-review.</li>
     </ul>
 
-    <p class="mt-8"><a class="btn" href="/docs">Read the Docs →</a></p>
+    <h2>FAQ</h2>
+    <p><b>Can I bring my own model?</b> Yes—use a BYOM adapter; we call your endpoint with your access rules.</p>
+    <p><b>How do I keep costs controlled?</b> Budget caps per agent/phase; batch retrieval; caching; model fallbacks.</p>
+    <p><b>Do humans stay in the loop?</b> Yes—approver gates at any step; required sign-off for production writes.</p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      {cta.map((c) => <a href={c.href} class="btn no-underline">{c.label}</a>)}
+      <a class="btn no-underline" href="mailto:founders@agentera.ai">Request a pilot</a>
+    </div>
   </article>
 </Base>
