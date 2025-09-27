@@ -29,7 +29,7 @@ html, body {
 .h1 { @apply text-4xl md:text-5xl font-extrabold tracking-tight; }
 .h2 { @apply text-2xl md:text-3xl font-bold; }
 .lead { @apply text-lg text-text-soft; }
-.small { @apply text-sm text-text.dim; }
+.small { @apply text-sm text-text-dim; } /* <-- fixed here */
 
 /* Fancy gradient text helper */
 .grad-text {
