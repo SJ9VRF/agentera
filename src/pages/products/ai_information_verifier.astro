@@ -1,0 +1,43 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+<Base title="CertiFy — Information Verifier — Agentera" description="Multi-agent fact-checker with confidence scoring.">
+  <article class="prose prose-invert max-w-none">
+    <h1>CertiFy — Information Verifier</h1>
+    <p class="lead">An API-first verification layer that scores claims, cites sources, and flags conflicts.</p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li>Analyst/Skeptic/Judge multi-agent pipeline</li>
+      <li>Web + internal corpus retrieval with dedup</li>
+      <li>Veracity scores, provenance graph, and alerts</li>
+      <li>SDKs for Python/JS; REST + Webhooks</li>
+    </ul>
+
+    <h2>Who it's for</h2>
+    <p>Enterprises, platforms, and researchers needing automated claim verification.</p>
+
+    <h2>How it works</h2>
+    <ol>
+      <li>POST a claim to /verify</li>
+      <li>Agents retrieve and reason with sources</li>
+      <li>Return JSON with score, evidence, and rationale</li>
+    </ol>
+
+    <h2>Security & Compliance</h2>
+    <ul>
+      <li>Signed responses with hash chain</li>
+      <li>Policy enforcement hooks (blocked sources, domains)</li>
+      <li>PII-aware retrieval filters</li>
+    </ul>
+
+    <h2>Roadmap</h2>
+    <ul>
+      <li>Streaming verdicts</li>
+      <li>Graph UI with cross-claim contradictions</li>
+      <li>Model-graded eval harness</li>
+    </ul>
+
+    <p class="mt-8"><a class="btn" href="/docs">Read the Docs →</a></p>
+  </article>
+</Base>
