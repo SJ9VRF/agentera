@@ -1,22 +1,56 @@
+---
+import "../styles/global.css"; // ✅ ensures Tailwind + your global styles load
+const { title = "Agentera", description = "Agentic AI Suite" } = Astro.props;
+const base = import.meta.env.BASE_URL; // '/agentera/' on GitHub Pages
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+  </head>
+  <body class="bg-bg text-text">
+    <!-- HEADER -->
     <header class="container py-6 flex items-center justify-between">
-      <a href="/" class="no-underline">
+      <a href={base} class="no-underline">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-white/10 grid place-items-center border border-white/15">⚙️</div>
+          <div class="w-9 h-9 rounded-xl bg-white/10 grid place-items-center border border-white/15 shadow-inner">⚙️</div>
           <span class="text-lg md:text-xl font-bold tracking-wide">Agentera</span>
         </div>
       </a>
       <nav class="flex flex-wrap gap-2 md:gap-3">
-        <a class="nav-pill" href="/products/ai_virtual_company">Virtual Company</a>
-        <a class="nav-pill" href="/products/ai_for_law_firms">Law Firms</a>
-        <a class="nav-pill" href="/products/ai_information_verifier">CertiFy</a>
-        <a class="nav-pill" href="/docs">Docs</a>
+        <a class="nav-pill" href={`${base}products/ai_virtual_company`}>Virtual Company</a>
+        <a class="nav-pill" href={`${base}products/ai_for_law_firms`}>Law Firms</a>
+        <a class="nav-pill" href={`${base}products/ai_information_verifier`}>CertiFy</a>
+        <a class="nav-pill" href={`${base}docs`}>Docs</a>
         <a class="nav-pill" href="https://github.com/sj9vrf/agentera" target="_blank">GitHub</a>
       </nav>
     </header>
 
+    <!-- MAIN -->
+    <main class="container">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
     <footer class="container py-10 mt-16 small border-t border-white/10">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <span>© {new Date().getFullYear()} Agentera</span>
-        <span class="text-text-dim">Built with Astro + Tailwind • GitHub Pages</span>
+        <span class="text-text-dim">Built with Astro + Tailwind • Deployed via GitHub Pages</span>
       </div>
     </footer>
+  </body>
+</html>
