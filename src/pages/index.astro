@@ -1,26 +1,168 @@
 ---
 import Base from "../layouts/Base.astro";
+const heroCTA = [
+  { href: "/products/ai_virtual_company", label: "See Product →" },
+  { href: "https://github.com/sj9vrf/agentera", label: "Star on GitHub" },
+];
 ---
-<Base title="Agentera — Virtual AI Company" description="Three products: AI Virtual Company, AI for Law Firms, and CertiFy information verifier.">
-  <section class="py-16">
-    <h1 class="h1">Agentera</h1>
-    <p class="mt-4 text-lg text-gray-200 max-w-3xl">
-      A suite of agentic AI products: simulate entire organizations, accelerate legal workflows, and verify information at scale.
-    </p>
 
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-      <a class="card no-underline" href="/products/ai_virtual_company">
-        <h2 class="h2 mb-2">AI Virtual Company</h2>
-        <p>Create a living simulation of a full company: CEO, engineers, analysts, PMs — all autonomous agents coordinating on goals.</p>
-      </a>
-      <a class="card no-underline" href="/products/ai_for_law_firms">
-        <h2 class="h2 mb-2">AI for Law Firms</h2>
-        <p>Discovery, drafting, precedent search, and evidence triage with verifiable chains-of-thought and audit trails.</p>
-      </a>
-      <a class="card no-underline" href="/products/ai_information_verifier">
-        <h2 class="h2 mb-2">CertiFy — Information Verifier</h2>
-        <p>Multi-agent fact-checking with source attribution, confidence scoring, and enterprise policy hooks.</p>
-      </a>
+<Base title="Agentera — Agentic AI Suite" description="Agentera builds agentic AI: Virtual Company Simulation, AI for Law Firms, and CertiFy (information verification).">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-8 md:p-12 mt-4">
+    <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-25 bg-emerald-400/30"></div>
+    <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full blur-3xl opacity-20 bg-cyan-400/30"></div>
+
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-gray-200">
+        <span class="opacity-80">Pre-seed</span>
+        <span class="opacity-30">•</span>
+        <span class="opacity-80">Pilot partners wanted</span>
+      </div>
+
+      <h1 class="h1 mt-4 leading-tight">
+        Agentic AI that <span class="text-emerald-300">plans, verifies,</span> and <span class="text-emerald-300">ships</span>.
+      </h1>
+      <p class="mt-4 text-lg text-gray-200/90">
+        Agentera is a suite of production-ready agents: a <b>Virtual Company simulator</b> for org-level planning,
+        <b>AI for Law Firms</b> to accelerate drafting with auditability, and <b>CertiFy</b> — an API-first
+        information verifier with citations and confidence scores.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        {heroCTA.map((c) => (
+          <a href={c.href} class="btn bg-white/10 hover:bg-white/15 no-underline">{c.label}</a>
+        ))}
+        <a href="/docs" class="btn no-underline">Read the Docs</a>
+      </div>
+
+      <!-- Social proof (placeholder logos) -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-gray-300/70 text-xs">
+        <div class="card py-4 text-center">Pilot: Research Lab</div>
+        <div class="card py-4 text-center">Pilot: Boutique Firm</div>
+        <div class="card py-4 text-center">Cloud-Ready</div>
+        <div class="card py-4 text-center">API-First</div>
+      </div>
     </div>
   </section>
+
+  <!-- VALUE SNAPSHOTS -->
+  <section class="grid md:grid-cols-3 gap-6 mt-10">
+    <div class="card">
+      <h2 class="h2 mb-2">AI Virtual Company</h2>
+      <p class="text-gray-200/90">Simulate CEO→PM→Eng→Legal with goal-aligned agents. Plan scenarios, stress-test org changes, and track KPIs.</p>
+      <ul class="mt-3 space-y-1 text-sm text-gray-300">
+        <li>• Org graph + shared memory</li>
+        <li>• Multi-agent planning (Analyst/Skeptic/Judge)</li>
+        <li>• Dashboards & exports</li>
+      </ul>
+      <a href="/products/ai_virtual_company" class="btn mt-4 no-underline">Explore →</a>
+    </div>
+
+    <div class="card">
+      <h2 class="h2 mb-2">AI for Law Firms</h2>
+      <p class="text-gray-200/90">Discovery triage, precedent retrieval, and draft generation with verifiable reasoning.</p>
+      <ul class="mt-3 space-y-1 text-sm text-gray-300">
+        <li>• Jurisdiction filters & Bluebook cites</li>
+        <li>• E-discovery clustering</li>
+        <li>• Audit trails by default</li>
+      </ul>
+      <a href="/products/ai_for_law_firms" class="btn mt-4 no-underline">Explore →</a>
+    </div>
+
+    <div class="card">
+      <h2 class="h2 mb-2">CertiFy — Verifier API</h2>
+      <p class="text-gray-200/90">Agent pipeline that scores claims, cites sources, and flags contradictions.</p>
+      <ul class="mt-3 space-y-1 text-sm text-gray-300">
+        <li>• Evidence graph & confidence score</li>
+        <li>• REST + Webhooks, SDKs</li>
+        <li>• Policy hooks (domain allow/deny)</li>
+      </ul>
+      <a href="/products/ai_information_verifier" class="btn mt-4 no-underline">Explore →</a>
+    </div>
+  </section>
+
+  <!-- WHY NOW / MOAT -->
+  <section class="mt-12 grid md:grid-cols-2 gap-6">
+    <div class="card">
+      <h3 class="h2 mb-2">Why now</h3>
+      <p class="text-gray-200/90">
+        Enterprises are moving from demos to outcomes. Agentic systems need <b>coordination</b>, <b>verification</b>,
+        and <b>governance</b> to leave the lab. Agentera is built for that transition.
+      </p>
+      <ul class="mt-4 space-y-2 text-sm text-gray-300">
+        <li>• Agent orchestration aligned to business KPIs</li>
+        <li>• Veracity checks before outputs hit production</li>
+        <li>• SOC-2-ready patterns and audit logs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 class="h2 mb-2">Moat</h3>
+      <p class="text-gray-200/90">
+        Proprietary multi-agent verification (Analyst/Skeptic/Judge), provenance graphing, policy-aware retrieval,
+        and evaluation harnesses tuned on real workloads.
+      </p>
+      <ul class="mt-4 space-y-2 text-sm text-gray-300">
+        <li>• Cross-claim contradiction detection</li>
+        <li>• Memory & tool-use traces for governance</li>
+        <li>• Pluggable models (bring-your-own foundation model)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="mt-12 card">
+    <h3 class="h2 mb-4">How it works</h3>
+    <div class="grid md:grid-cols-4 gap-6 text-sm">
+      <div>
+        <div class="text-3xl mb-2">1</div>
+        <b>Connect</b>
+        <p class="text-gray-300">Docs, GitHub, DMS, or web sources.</p>
+      </div>
+      <div>
+        <div class="text-3xl mb-2">2</div>
+        <b>Orchestrate</b>
+        <p class="text-gray-300">Role-based agents plan & execute with checks.</p>
+      </div>
+      <div>
+        <div class="text-3xl mb-2">3</div>
+        <b>Verify</b>
+        <p class="text-gray-300">CertiFy scores claims and attaches evidence.</p>
+      </div>
+      <div>
+        <div class="text-3xl mb-2">4</div>
+        <b>Ship</b>
+        <p class="text-gray-300">Dashboards, exports, and approvals to production.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACTION / METRICS (placeholders you can update) -->
+  <section class="mt-12 grid md:grid-cols-3 gap-6">
+    <div class="card text-center">
+      <div class="text-5xl font-extrabold">3</div>
+      <div class="mt-1 text-gray-300">Products shipping</div>
+    </div>
+    <div class="card text-center">
+      <div class="text-5xl font-extrabold">2</div>
+      <div class="mt-1 text-gray-300">Active pilots</div>
+    </div>
+    <div class="card text-center">
+      <div class="text-5xl font-extrabold">API</div>
+      <div class="mt-1 text-gray-300">Verifier & Webhooks</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mt-12 rounded-2xl border border-white/10 p-8 text-center bg-white/5">
+    <h3 class="h2">Looking for 2–3 pilot partners</h3>
+    <p class="mt-2 text-gray-200/90">Legal ops, enterprise R&D, or platforms needing verification.</p>
+    <div class="mt-4 flex justify-center gap-3">
+      <a class="btn bg-white/10 hover:bg-white/15 no-underline" href="/docs">Read the Docs</a>
+      <a class="btn no-underline" href="mailto:founders@agentera.ai">Contact founders</a>
+    </div>
+    <p class="small mt-3">Prefer GitHub? <a href="https://github.com/sj9vrf/agentera" target="_blank">Open an issue</a>.</p>
+  </section>
+
 </Base>
